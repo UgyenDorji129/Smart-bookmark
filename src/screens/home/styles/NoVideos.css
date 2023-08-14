@@ -1,0 +1,11 @@
+.no-data-div {
+    color: black;
+    background-color: white;
+    justify-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 9rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+}

@@ -1,0 +1,40 @@
+import apiClient from "../../../api/axios";
+
+async function editBookMark(bookmark_id, newNotes, setBookmarks){
+    var token = '';
+    try{
+        const result = localStorage.getItem("token");
+        if (!result) {
+          window.location.href = "/login";
+        }
+        token = JSON.parse(result);
+        console.log("Token here in player: ", token);
+    
+        const response = await apiClient
+          .put(`/bookmark/${bookmark_id}`,{
+            notes:newNotes
+        },
+            {
+              headers: {
+                "x-access-token": token,
+              },
+            }
+          );
+          console.log("DHa 1: ",response)
+          const bookmarkResult = await apiClient
+            .get(`/bookmark/${response.data.video_id}`,
+              {
+                headers: {
+                  "x-access-token": token,
+                },
+              }
+            );
+            setBookmarks(bookmarkResult.data.bookmark_details)
+    
+        }
+        catch{
+          console.log("Some error Occures 12 3");
+        }
+}
+
+export default editBookMark;

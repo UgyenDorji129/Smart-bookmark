@@ -1,0 +1,79 @@
+:root {
+  --base-font-size: 16px;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+.login-container {
+  background: url('../../../../public/assets/background_waeswa.png'), lightgray 50% / cover no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box {
+  padding: 2rem;
+  border-radius: 3.25rem;
+  background: linear-gradient(135deg, #FE9957 0%, #F96581 100%);
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  width: 80rem;
+  height: 42rem;
+}
+
+.login-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 6rem 8.174375rem; 
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 2rem; 
+  background: #FFF;
+}
+
+.login-content + .login-content {
+  margin-left: 2rem; 
+  background: url('../../../../public/assets/bookmark.png'), lightgray 50% / cover no-repeat;
+  border-radius: 2rem; }
+
+.effect-img-div {
+  position: absolute;
+  top: 52rem;
+}
+@media (max-width: 1024px) {
+  .login-box {
+    width: 70rem;
+    height: 36rem;
+  }
+  
+  .login-content {
+    padding: 4rem 5.109375rem;
+  }
+  
+  .login-content + .login-content {
+    margin-left: 1.5rem;   }
+}
+
+@media (max-width: 768px) {
+  .login-box {
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+  }
+  
+  .login-content {
+    padding: 4rem 3.2rem;
+    align-items: center;
+  }
+  
+  .login-content + .login-content {
+    margin-left: 0;
+    margin-top: 1.5rem;
+  }
+}

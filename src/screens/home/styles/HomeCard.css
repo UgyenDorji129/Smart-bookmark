@@ -1,0 +1,68 @@
+.youtube-data-div{
+    cursor: pointer;
+}
+.thumbnail-img {
+    width: 100%;
+    height: 18rem;
+    border-radius: 1rem;
+}
+
+.thumbnail-img:hover {
+    border-radius: 0rem;
+}
+
+.time-para {
+    position: relative;
+    margin-left: 0.6rem;
+    top: 0.2rem;
+}
+.api-data-div {
+    margin-top: 0.8rem;
+    padding-left: 0.5rem;
+    width: 100%;
+    display: flex;
+}
+
+.video-title {
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+    color: #323232;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-family: 'Roboto','Arial', sans-serif ;
+}
+
+.bookmark-icon {
+    position: relative;
+}
+.bookmark-para {
+    padding-top: 0.2rem;
+}
+
+.more-icon {
+    margin-left: 20rem;
+    cursor: pointer;
+}
+
+.menu-icons {
+    position: relative;
+    top: 0.3rem;
+    padding-right: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,70 @@
+.bookmark-main-div{
+   height: 100%;
+   overflow-y: auto;
+   overflow-x: hidden;
+   background-color: white;
+   margin-left: 0.8rem;
+}
+.spacer-div{
+    height: 2rem;
+    width: 100%;
+    background-color: white;
+    position: sticky;
+    top: 0;
+}
+
+.main-grid-div{
+    display: flex;
+    flex-direction: column;
+    margin-top: "10rem";
+    overflow-y: auto;
+    padding-bottom: 2rem;
+
+}
+.notes-div{
+    height: 6rem;
+    border: solid rgb(184, 181, 181) 1px;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: antiquewhite;
+    /* overflow-y: auto; */
+}
+
+.notes-headers{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.2rem;
+}
+
+.timestamps-h3{
+    margin-top: 0.2rem;
+    color: rgb(29, 29, 29);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.actual-notes{
+    padding-top: 0.4rem;
+    font-size: 1rem;
+    color: rgb(61, 60, 60);
+}
+
+.ai-loading-div {
+    position: relative;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+}
+.no-bookmarks-div {
+    display: flex;
+    font-size: 1.25rem;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    font-weight: 700;
+    align-items: center;
+}

@@ -1,0 +1,66 @@
+name: Build and Deploy to Cloud Run
+
+on:
+  push:
+    branches:
+      - main
+#       - new
+
+# Environment variables available to all jobs and steps in this workflow
+env:
+    PROJECT_ID: us-gcp-ame-con-116-npd-1
+    SERVICE_NAME: smartbookmark-frontend
+    REGION: us-west2
+    
+jobs:
+  Sonarqube:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Sonar scanner
+        env:
+          SQ_TOKEN: ${{ secrets.SQ_ADMIN_TOKEN }}
+          SQ_URL: https://sonarqube.hashedin.com
+          SCANNER_REPO: .
+        shell: bash
+        run: |
+          chmod +x ./.github/actions/sonar-scanner-runner.sh
+          bash ./.github/actions/sonar-scanner-runner.sh 
+    
+  setup-build-deploy:
+    needs: Sonarqube
+    name: Setup, Build, and Deploy
+    permissions:
+      contents: write
+      id-token: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      # Setup gcloud CLI
+      - id: 'auth'
+        uses: google-github-actions/auth@v0 
+        with:
+          service_account: ${{ secrets.SERVICE_ACCOUNT }}
+          workload_identity_provider: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}        
+        
+      # Configure gcloud CLI
+      - name: gcloud Set up
+        run: |
+            gcloud config set project $PROJECT_ID
+
+      - name: Image
+        run: |-
+          docker build -t gcr.io/$PROJECT_ID/$SERVICE_NAME .
+          
+      #Configure docker to use the gcloud command-line tool as a credential helper
+      - run: |
+            gcloud auth configure-docker -q
+        # Push image to Google Container Registry
+      - name: Build
+        run: |-
+            docker push gcr.io/$PROJECT_ID/$SERVICE_NAME
+      - name: Deploy
+        run: |
+            gcloud run deploy $SERVICE_NAME --min-instances=1 --max-instances=2 --memory=512Mi  --cpu=1 --region $REGION --image gcr.io/$PROJECT_ID/$SERVICE_NAME --allow-unauthenticated

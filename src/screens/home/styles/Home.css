@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.toolbar-logo {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-left: 1%;
+  margin-right: 0.2rem;
+  margin-top: 0.1rem;
+  cursor: pointer;
+}
+.search-div {
+  font-family: Roboto, Noto, sans-serif;
+  position: relative;
+  display: flex;
+  left: -22rem;
+  border-radius: 8rem;
+  margin-right: 9rem;
+  border: 1px solid #999;
+  /* box-shadow: 2px 0px 5px rgba(246, 91, 102, 0.2); */
+}
+
+.input-url-field {
+  padding-left: 1.2rem;
+  font-size: 1rem;
+  width: 32rem;
+  border-top-left-radius: 8rem;
+  border-bottom-left-radius: 8rem;
+  height: 2.4rem;
+  border: none;
+  border-right: 1px solid #999;
+}
+
+.watch-btn {
+  border-top-right-radius: 8rem;
+  border-bottom-right-radius: 8rem;
+  font-size: 1rem;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding-left: 0.5rem;
+  padding-right: 1rem;
+  background-color: rgb(246, 91, 102);
+  color: white;
+  width: 24%;
+  /* box-shadow: 2px 0px 5px rgba(246, 91, 102, 0.2); */
+}
+
+.watchwise-div {
+  margin-left: 0.8rem;
+  display: flex;
+  margin-right: 43.3rem;
+  color: black;
+}
+.watchwise-header {
+  cursor: pointer;
+  margin-top: 0.5rem;
+  font-family: Roboto, Noto, sans-serif;
+  font-weight: 900;
+  font-style: bold;
+}
+
+.user-profile-div {
+  width: 16rem;
+  padding-top: 2rem;
+}
+
+.user-details-div {
+  padding-left: 1rem;
+  display: flex;
+}
+
+.name-email-div {
+  display: grid;
+  margin-left: 1rem;
+}
+
+.signout-btn-div {
+    width: 100%;
+    background-color:white;
+    margin-top: 2rem;
+}
+
+.signout-btn-div:hover {
+    background-color: #f7f5f5;
+}
+
+.signout-btn {
+  width: 90%;
+  font-size: 1rem;
+  border: none;
+  background: white;
+  font-weight: 100;
+  cursor: pointer;
+  padding: 0.5rem;
+  text-align: left;
+  padding-left: 2.8rem;
+}
+
+.signout-btn:hover {
+  background-color: #f7f5f5;
+}
+
+.exit-icon {
+    position: relative;
+    left: -1.5rem;
+    top: 0.4rem;
+}
+
+.main-body-div {
+  /* display: flex;
+  flex-direction: row; */
+  width: 100vw;
+  height: 100vh;
+}
+
+.content-div {
+  padding: 0 2.5rem;
+  /* overflow-x: auto; */
+}
+
+.diff-segments-div {
+  padding-top: 1.5rem;
+}
+.diff-segments-div:first-child {
+  padding-top: 5rem;
+}

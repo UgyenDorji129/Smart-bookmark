@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&family=Roboto:wght@500&display=swap');
+
+
+.segment-header {
+  font-size: 1.5rem;
+  font-family: 'Quicksand', sans-serif;
+  /* margin-left: 2.9rem; */
+}
+
+.diff-content-div {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.video-card-div {
+  display: inline-block;
+  width: 25rem;
+  padding-top: 1rem;
+  padding-right: 2rem;
+}
+
+.video-card-div:last-child {
+  padding-right: 0;
+}
